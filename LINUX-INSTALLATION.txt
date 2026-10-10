@@ -1,0 +1,52 @@
+Max Payne 2 VR - Linux installer workaround for issue #21
+
+For "Generated asset shape changed: kSegments" under Wine/Proton, or
+"Regenerated geometry/pose data does not match the validated build".
+
+1. Close Max Payne 2. Extract this entire ZIP into a new writable folder.
+   Keep setup-files beside Max Payne 2 VR Setup.exe.
+2. Install Python 3, Wine with 32-bit and 64-bit Windows program support, and
+   current Winetricks through your distribution's instructions. Winetricks
+   must support vcrun2022 and ucrtbase2019. Internet access is needed for its
+   runtime downloads. Use your normal user; do not run the helper with sudo.
+3. Open a terminal in the extracted folder and run:
+
+       sh "Install on Linux.sh"
+
+4. The helper creates a fresh installer-only Wine prefix and runs:
+
+       winetricks -q vcrun2022 ucrtbase2019
+
+   It then launches Setup with ucrtbase=n,b;msvcrt=n,b DLL overrides. Runtime
+   preparation must succeed before Setup opens. Keep the terminal open.
+5. In Setup, select Z:\ followed by the Linux path to the game's maxpayne2.exe.
+   Example: /home/alex/.local/share/Steam/steamapps/common/Max Payne 2 The Fall
+   of Max Payne/maxpayne2.exe is under Z:\home\alex\... in the file picker.
+   Click Install / update and wait for "Installation complete".
+6. Afterwards, use your usual Steam/Proton and SteamVR launch setup. Select
+   MP2VR_FirstPerson in the game's startup window. The helper's prefix is for
+   installation only; do not use it to launch the game.
+
+The prefix and setup-linux.log are kept beneath ~/.local/share/mp2vr/setup/;
+their exact paths are printed in the terminal. Each attempt creates a new
+prefix, which takes disk space. After Setup closes, these installer-only
+session folders can be removed if you no longer need their logs.
+
+If Setup fails, send its full error, setup-linux.log, and any new
+MP2VR-Asset-Diagnostics-....txt from the game folder. A closed Setup window
+does not by itself mean installation succeeded. Existing game saves and VR
+settings are preserved by Install / update.
+
+This automates the native-Microsoft-runtime workaround reported successful
+on Arch Linux in issue #21. It does not modify the game's Steam/Proton prefix
+or system Wine configuration. It also includes the fixed mathematical view
+directions previously validated on Windows with and without FMA support.
+Game-file, asset-shape and generated-cache hash validation remain enabled.
+No Microsoft runtime DLLs are newly bundled; Winetricks fetches its runtimes.
+
+Full installation with this helper still needs confirmation on Linux. This
+addresses installer generation, not SteamVR/Proton gameplay compatibility.
+The reporting user did not isolate which CRT DLL caused the discrepancy.
+
+Report and working commands:
+https://github.com/evilSheep/max-payne-2-vr/issues/21

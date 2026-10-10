@@ -41,7 +41,7 @@ Please note this is a mod for a 20+ year old game... there will be bugs and jank
 
 ## Requirements
 
-- Your own installed copy of **Max Payne 2: The Fall of Max Payne**. The **English Steam version** is the tested release target; other builds are not verified.
+- Your own installed copy of **Max Payne 2: The Fall of Max Payne**. Setup supports the **English Steam version** and the verified **German Steam 1.1.102.0** executable; other builds are not verified.
 - A Windows 10/11 gaming PC with SteamVR installed.
 - A PC-connected VR headset and two tracked controllers. Development testing used **PSVR2** and **Quest 3 through PC VR**. This is not a standalone Quest application.
 
@@ -58,6 +58,8 @@ Download the mod ZIP from this repository's **Releases** page. The **Code → Do
 5. Ensure that **D3D Hardware T&L** is selected for Acceleration. Click Play
 
 Open **VR Settings** from the main menu to customize the experience. See the [installation guide](INSTALLATION.md) and [controller guide](CONTROLS.md) for details.
+
+You can also [set VR resolution in the INI before launching](INSTALLATION.md): edit `RenderResolution` under `[VR]` in `maxpayne2vr_settings.ini` beside the game executable. For example, `1800` renders **1800 x 1800 per eye**. Resolution changes require restarting the game.
 
 To update, run Setup from the new release. To remove the mod, run Setup and choose **Uninstall**. The installer preserves saves and user settings.
 

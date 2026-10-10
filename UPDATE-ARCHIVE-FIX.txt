@@ -1,0 +1,40 @@
+Max Payne 2 VR - rc.64 archive-loading fix
+
+This update addresses missing VR Settings and crashes reporting that
+mp2vr_punch, mp2vr_gun_hit or another MP2VR impact sound was not found.
+The corrected installer generates the menu and sound definitions inside
+MP2VR_FirstPerson so they take priority when that mod is selected.
+
+UPDATE YOUR EXISTING INSTALLATION
+1. Close Max Payne 2.
+2. Extract the ENTIRE ZIP into a new normal local folder, for example a
+   folder on your Desktop or in Downloads. It need not be inside the game
+   folder. Keep setup-files beside Max Payne 2 VR Setup.exe. Do not run
+   Setup from inside the ZIP or move the EXE on its own.
+3. Run Max Payne 2 VR Setup.exe. Click Browse and select maxpayne2.exe in
+   the SAME Steam game installation you have been playing.
+4. Click Install / update. Let asset generation finish; it can take several
+   minutes. Wait for the Finished message. Existing saves, VR settings and
+   controller calibration are preserved. Uninstalling first is unnecessary.
+5. Start SteamVR, then launch the game. In the game's launcher, select
+   MP2VR_FirstPerson in the mod/custom-game selection before clicking Play.
+   Selecting this mod is required for the fix.
+
+PLEASE TEST
+- Confirm VR Settings is visible in the game's menu.
+- Load a level and try an unarmed punch and a held-gun melee hit.
+- If possible, also try a slap and a neck hit.
+- Report whether the menu appears and whether each hit works without the
+  missing-sound crash. This package has passed local archive-loading tests;
+  confirmation on your affected installation is still needed.
+
+IF THE PROBLEM REMAINS
+Close the game and send the newly updated maxpayne2vr.log from the game
+folder, a screenshot of any error, and the selected mod name. If you still
+have Check Archives.cmd from the diagnostic ZIP, run it again against the
+same maxpayne2.exe and send the new Archive.Check report too. The relevant
+post-update check is explicit priority of MP2VR_FirstPerson.mp2m; ordinary
+archive resolution can still report missing definitions on this drive.
+If Setup itself fails, send its displayed error/details.
+
+No drive reformat or manual archive extraction is required.

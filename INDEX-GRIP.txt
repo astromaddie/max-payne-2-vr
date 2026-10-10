@@ -1,0 +1,45 @@
+MAX PAYNE 2 VR - OPTIONAL LIGHTER INDEX GRIP
+
+For Valve Index controllers with hard-to-activate squeeze/grab. This optional
+binding helper works with your existing mod installation. No game rebuild or
+mod reinstall is required. Hardware confirmation is still needed.
+
+HOW TO APPLY
+1. Extract this entire ZIP anywhere writable, such as a folder on your Desktop.
+   Keep the bindings folder beside the CMD files. Do not run from inside the ZIP.
+2. Close Max Payne 2 and fully exit SteamVR.
+3. Run Apply Lighter Index Grip.cmd. Wait for the success message.
+4. Restart SteamVR. If you previously selected a custom binding, select DEFAULT
+   for Max Payne 2 in SteamVR's controller bindings. A custom binding can bypass
+   this tester. Start Max Payne 2 through Steam.
+5. Fully relax both grips once, then test a gentle deliberate squeeze.
+
+WHAT CHANGES
+Both Index grip buttons activate at force 0.25 instead of the inspected Valve
+default 0.8, and release below 0.10. These are normalized sensor thresholds,
+not percentages of your physical strength. Touch by itself does not grab.
+The earlier MP2VR stick-click and A-button fixes are included. Triggers, B,
+movement axes, poses, haptics and other controllers/games are preserved.
+This updates only the Max Payne 2 Index driver-default binding. It does not
+change any game files or diagnose whether an existing custom binding is active.
+
+PLEASE TEST AND REPORT
+- Does each hand grab a gun, magazine and painkiller with a comfortable squeeze?
+- Does each hand release reliably when you relax, without accidental drops?
+- Does either hand grab or interact while relaxed, or remain visually open?
+- Does manual reloading now work? Are A buttons and stick clicks still correct?
+Please include your exact mod version, whether you use toggle grip, and
+Index Grip Test.log (created beside the CMD files). If one hand still fails,
+send maxpayne2vr.log and screenshots of that hand's active grip bindings too.
+The test log confirms file changes, not live button reception by the game.
+
+UNDO THE LIGHTER THRESHOLDS
+Close the game and SteamVR. Run Restore Standard Index Grip.cmd, then restart
+SteamVR. This regenerates the standard MP2VR Index v2 binding using the current
+Valve defaults, keeping the stick-click/A-button fixes. It does not restore
+arbitrary edits to a previous custom binding. Custom bindings in SteamVR are
+not edited by this tester. The original profile backup is preserved.
+
+If the script reports an error, send Index Grip Test.log. Do not keep reinstalling
+the game. A SteamVR update may replace the driver-default override; reapply the
+tester with SteamVR closed if needed.
