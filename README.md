@@ -1,3 +1,24 @@
+## Steam Frame
+
+The standalone Frame support is on [`steam-frame-support`](https://github.com/astromaddie/max-payne-2-vr/tree/steam-frame-support).
+This runs the Windows game and VR mod through ARM64 Proton and FEX. The branch adds
+a compatibility DLL, a patcher for your own mod file, shader-library setup and a
+Steam launch wrapper.
+
+Follow the [Frame setup guide](https://github.com/astromaddie/max-payne-2-vr/blob/steam-frame-support/docs/STEAM_FRAME_VR.md)
+and [compatibility DLL build instructions](https://github.com/astromaddie/max-payne-2-vr/blob/steam-frame-support/steam-frame/compat/README.md).
+The documented setup uses the English Steam game and the official rc.67 mod.
+You need your own game and mod files; don't redistribute the patched ASI.
+
+```sh
+git clone --branch steam-frame-support https://github.com/astromaddie/max-payne-2-vr.git
+cd max-payne-2-vr
+```
+
+The original PC VR mod README for `main` follows.
+
+---
+
 # Max Payne 2 VR
 
 ☕ Support on Ko-fi: [https://ko-fi.com/evilsheep](https://ko-fi.com/evilsheep)
